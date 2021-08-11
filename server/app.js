@@ -8,13 +8,13 @@ const db = require('./src/database/db/connection');
 const vehiclesRouter = require('./src/routes/vehicles-router');
 
 const app = express();
-
+const apiPort = 8080;
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.listen(apiPort, () => console.log('Server running on port ${apiPort}'))
 app.use('/vehicles', vehiclesRouter);
 
 // catch 404 and forward to error handler
