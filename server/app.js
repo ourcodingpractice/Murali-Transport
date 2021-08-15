@@ -8,7 +8,8 @@ const db = require('./src/database/db/connection');
 const vehiclesRouter = require('./src/routes/vehicles-router');
 
 const app = express();
-
+const apiPort = 8080;
+app.listen(apiPort, () => console.log('Server running on port ${apiPort}'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
