@@ -2,7 +2,9 @@
     color: #ec6334;
     padding: 0px 5px;
 }
-
+.navbar-nav {
+    justify-content: flex-end !important;
+}
 .contact-info {
     display: flex;
     justify-content: space-between;
@@ -38,11 +40,19 @@ img {
     background-color: black;
 }
 
-.video-content {
+.vehicle-register {
     z-index: 2;
     position: absolute;
     top: 35%;
     left: 10%;
+    display: flex;
+}
+
+.vehicle-booking {
+    z-index: 2;
+    position: absolute;
+    top: 35%;
+    /* right: 20%; */
     display: flex;
 }
 
@@ -77,6 +87,8 @@ span {
     background-color: #2f2121;
 }
 
-a span {
+.nav-link span {
     color: black !important;
+    padding: 10px;
+    cursor: pointer;
 }
