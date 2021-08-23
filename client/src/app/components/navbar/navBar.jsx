@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import '../navbar/navBar.css';
 import logo from '../../logo.svg';
 import { Link } from 'react-router-dom';
+import SignUpModal from '../signup/signup';
+import LoginModal from '../login/login';
 
 const Container = styled.div.attrs({
     className: 'container-fluid',
@@ -11,6 +13,7 @@ const Container = styled.div.attrs({
 `
 
 class NavBar extends Component {
+
     render() {
         return (
             <Container>
@@ -37,16 +40,16 @@ class NavBar extends Component {
                                 <div className="navbar-nav">
 
                                     <div href="" className="nav-link">
-                                        <Link to={"/"}>
+                                        <Link to={"/"} style={{ textDecoration: 'none' }}>
                                             <span> Home </span>
                                         </Link>
                                     </div>
 
                                     <div href="" to="/signup" className="nav-link">
-                                        <span> Sign Up </span>
+                                        <SignUpModal />
                                     </div>
                                     <div href="" to="/login" className="nav-link">
-                                        <span> Login </span>
+                                        <LoginModal />
                                     </div>
                                     <div href="" to="/contact" className="nav-link">
                                         <span> Contact </span>
