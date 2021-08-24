@@ -5,6 +5,9 @@ import logo from '../../logo.svg';
 import { Link } from 'react-router-dom';
 import SignUpModal from '../signup/signup';
 import LoginModal from '../login/login';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 
 const Container = styled.div.attrs({
     className: 'container-fluid',
@@ -29,36 +32,22 @@ class NavBar extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-2 text-center">
                             <img src={logo} alt="Logo" />
                         </div>
-                        <div className="col-4">
-
-                        </div>
-                        <div className="col-6 navBar">
-                            <div className="navbar-expand-sm">
-                                <div className="navbar-nav">
-
-                                    <div href="" className="nav-link">
-                                        <Link to={"/"} style={{ textDecoration: 'none' }}>
-                                            <span> Home </span>
-                                        </Link>
-                                    </div>
-
-                                    <div href="" to="/signup" className="nav-link">
-                                        <SignUpModal />
-                                    </div>
-                                    <div href="" to="/login" className="nav-link">
-                                        <LoginModal />
-                                    </div>
-                                    <div href="" to="/contact" className="nav-link">
-                                        <span> Contact </span>
-                                    </div>
-                                    <div href="" to="/profile" className="nav-link">
-                                        <span> Profile</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="col-6 offset-4 text-center">
+                            <Navbar expand="sm" style={{ justifyContent: 'flex-end' }}>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ padding: '.75rem' }} />
+                                <Navbar.Collapse id="basic-navbar-nav" style={{ justifyContent: 'flex-end' }}>
+                                    <Nav>
+                                        <Nav.Item style={{ minWidth: '85px' }}> <Nav.Link href="/">  <span> Home </span></Nav.Link></Nav.Item>
+                                        <Nav.Item style={{ minWidth: '85px' }}> <Nav.Link href=""> <SignUpModal /></Nav.Link></Nav.Item>
+                                        <Nav.Item style={{ minWidth: '85px' }}>   <Nav.Link href="">   <LoginModal /></Nav.Link></Nav.Item>
+                                        <Nav.Item style={{ minWidth: '85px' }}>   <Nav.Link href="/contact"> <span> Contact </span></Nav.Link></Nav.Item>
+                                        <Nav.Item style={{ minWidth: '85px' }}>  <Nav.Link href="/profile">  <span> Profile</span></Nav.Link></Nav.Item>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Navbar>
                         </div>
                     </div>
                 </header>
