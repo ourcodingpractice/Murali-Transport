@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../navbar/navBar.css';
 import logo from '../../logo.svg';
-import { Link } from 'react-router-dom';
 import SignUpModal from '../signup/signup';
 import LoginModal from '../login/login';
 import Navbar from 'react-bootstrap/Navbar';
@@ -21,15 +20,15 @@ class NavBar extends Component {
         return (
             <Container>
                 <header className="v-header">
-                    <div className="row">
-                        <div className="contact-info">
-                            <div>
-                                <i className="fa fa-phone fa-lg"></i> <span>+91 9032245617</span>
-                            </div>
-                            <div>
-                                <label>Email : </label><span> anu@yopmail.com</span>
-                            </div>
+                    <div className="row contact-info">
+                        {/* <div className="contact-info"> */}
+                        <div className="col-md-6">
+                            <i className="fa fa-phone fa-lg"></i> <span>+91 9032245617</span>
                         </div>
+                        <div className="col-md-6">
+                            <label>Email : </label><span> anu@yopmail.com</span>
+                        </div>
+                        {/* </div> */}
                     </div>
                     <div className="row">
                         <div className="col-2 text-center">

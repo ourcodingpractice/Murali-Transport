@@ -29,7 +29,9 @@ class Home extends Component {
                                         <h1>Register Your Vehicle</h1>
                                         <span>WE'VE GOT YOU COVERED</span>
                                         <div className="btn-div">
-                                            <button type="button" className="button" >Register</button>
+                                            <Link to={"/register"}>
+                                                <button type="button" className="button" >Register</button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +46,8 @@ class Home extends Component {
                                         <span>FOR BEST QUALITY SHIPPING</span>
                                         <div className="btn-div">
                                             <Link to={"/booking"}>
-                                                <button type="button" className="button">Booking</button></Link>
+                                                <button type="button" className="button">Booking</button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

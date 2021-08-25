@@ -2,21 +2,15 @@
     color: #ec6334;
     padding: 0px 5px;
 }
-.navbar-nav {
-    justify-content: flex-end !important;
-}
+
 .contact-info {
-    display: flex;
-    justify-content: space-between;
+    align-items: center;
     padding: 0em 2em !important;
     background-color: black;
     color: white;
-    height: 3em;
+    height: 5em;
 }
 
-.navBar {
-    padding: 0.75em;
-}
 img {
     padding: 5px;
     height: 5em;
@@ -43,7 +37,7 @@ img {
 .vehicle-register {
     z-index: 2;
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 10%;
     display: flex;
 }
@@ -51,8 +45,7 @@ img {
 .vehicle-booking {
     z-index: 2;
     position: absolute;
-    top: 35%;
-    /* right: 20%; */
+    top: 40%;
     display: flex;
 }
 
@@ -91,4 +84,14 @@ span {
     color: black !important;
     padding: 5px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .contact-info > div:nth-child(2) {
+        text-align: end;
+    }
+
+    .contact-info {
+        height: 3em;
+    }
 }
