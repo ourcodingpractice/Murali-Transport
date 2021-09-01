@@ -15,9 +15,9 @@ class Home extends Component {
                 <section>
                     <div className="video-overlay">
                         <div className="video-wrap">
-                            <video controls autoPlay loop muted>
+                            {/* <video controls autoPlay loop muted>
                                 <source src={myVideo} type="video/mp4" ></source>
-                            </video>
+                            </video> */}
                         </div>
                         <div className="row">
                             <div className="col-6">

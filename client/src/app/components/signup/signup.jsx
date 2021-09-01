@@ -108,17 +108,15 @@ export default function FormDialog() {
     const handleShow = () => setShow(true);
 
     const handlePhoneNumberChange = (e: any) => {
-
-        if (e.target.name === 'ph_number') {
-            let regex;
-            e.type === 'change' ? regex = /^[0-9]{1,10}$/ : regex = /^[0-9]{10}$/;
-            if (regex.test(Number(e.target.value))) {
-                signUp[e.target.name] = e.target.value;
-            }
+        let regex;
+        e.type === 'change' ? regex = /^[0-9]{1,10}$/ : regex = /^[0-9]{10}$/;
+        if (regex.test(Number(e.target.value))) {
+            signUp[e.target.name] = e.target.value;
             setFormState({
                 ...signUp
             });
         }
+
 
     };
 
@@ -129,6 +127,23 @@ export default function FormDialog() {
             ...signUp
         });
     };
+
+    const handlePasswordMatch = (e) => {
+        if (e.type === 'change') {
+            signUp[e.target.name] = e.target.value;
+            setFormState({
+                ...signUp
+            });
+        } else if ((signUp['password'].length > 0) && (signUp['confirm_password'].length > 0)) {
+            if ((signUp['password'].length !== signUp['confirm_password'].length)) {
+                signUp['errors'].confirm_passwordError = 'Password and confirm password are not matching !!'
+            } else if (signUp['password'] !== signUp['confirm_password']) {
+                signUp['errors'].confirm_passwordError = 'Password and confirm password are not matching !!'
+            } else if (signUp['password'] === signUp['confirm_password']) {
+                signUp['errors'].confirm_passwordError = '';
+            }
+        }
+    }
 
 
     return (
@@ -146,14 +161,12 @@ export default function FormDialog() {
                         <Row className="mb-3">
                             <Col>
                                 <Form.Control required type="text" placeholder="First name" name="fname" value={signUp.fname} onChange={handleChange} />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 <Form.Control.Feedback type="invalid">
                                     Please enter a first name.
                                 </Form.Control.Feedback>
                             </Col>
                             <Col>
                                 <Form.Control required type="text" placeholder="Last name" name="lname" value={signUp.lname} onChange={handleChange} />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 <Form.Control.Feedback type="invalid">
                                     Please enter a last name.
                                 </Form.Control.Feedback>
@@ -161,17 +174,16 @@ export default function FormDialog() {
                         </Row>
                         <Row className="mb-3">
                             <Col>
-                                <Form.Control required type="text" placeholder="Phone number" name="ph_number" value={signUp.ph_number} maxLength="10" onChange={handlePhoneNumberChange} onBlur={handlePhoneNumberChange} />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control required minLength="10" maxLength="10" type="text" placeholder="Phone number" name="ph_number" value={signUp.ph_number} onChange={handlePhoneNumberChange} onBlur={handlePhoneNumberChange} />
                                 <Form.Control.Feedback type="invalid">
-                                    Please enter your phone number.
+                                    {signUp.ph_number.length === 0 ? 'Please enter your phone number.' : 'Enter 10 digit phone number'}
                                 </Form.Control.Feedback>
+
                             </Col>
                         </Row>
                         <Row className="mb-3">
                             <Col>
                                 <Form.Control required type="email" placeholder="Email" name="email" value={signUp.email} onChange={handleChange} />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 <Form.Control.Feedback type="invalid">
                                     Please enter an email.
                                 </Form.Control.Feedback>
@@ -180,21 +192,20 @@ export default function FormDialog() {
                         <Row className="mb-3">
                             <Col>
                                 <Form.Control required type="text" placeholder="Password" name="password" value={signUp.password} onChange={handleChange} />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 <Form.Control.Feedback type="invalid">
                                     Please enter a password.
                                 </Form.Control.Feedback>
                             </Col>
                         </Row>
-                        <Row className="mb-3">
+                        {/* <Row className="mb-3">
                             <Col>
-                                <Form.Control required type="text" placeholder="Confirm Password" name="confirm_password" value={signUp.confirm_password} onChange={handleChange} />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control type="text" placeholder="Confirm Password" isInvalid={signUp['errors'].confirm_passwordError.length > 0} name="confirm_password" value={signUp.confirm_password} onChange={handlePasswordMatch} onBlur={handlePasswordMatch} />
+                                <Form.Control.Feedback>Looks good! {!!signUp['errors'].confirm_passwordError.length}</Form.Control.Feedback>Hii{!!signUp['errors'].confirm_passwordError.length}
                                 <Form.Control.Feedback type="invalid">
-                                    Please enter confirm password.
+                                    {signUp['errors'].confirm_passwordError.lenth === 0 ? 'Please enter confirm password.' : signUp['errors'].confirm_passwordError}
                                 </Form.Control.Feedback>
                             </Col>
-                        </Row>
+                        </Row> */}
                     </Form>
                 </Modal.Body>
                 <Modal.Footer style={{ justifyContent: 'center' }}>
