@@ -27,7 +27,7 @@ class Home extends Component {
                                     </div>
                                     <div className="content-group">
                                         <h1>Register Your Vehicle</h1>
-                                        <span>WE'VE GOT YOU COVERED</span>
+                                        <span>WITH MURALI TRANSPORT</span>
                                         <div className="btn-div">
                                             <Link to={"/register"}>
                                                 <button type="button" className="button" >Register</button>
@@ -43,7 +43,7 @@ class Home extends Component {
                                     </div>
                                     <div className="content-group">
                                         <h1>Book A Vehicle</h1>
-                                        <span>FOR BEST QUALITY SHIPPING</span>
+                                        <span>WITH MURALI TRANSPORT</span>
                                         <div className="btn-div">
                                             <Link to={"/booking"}>
                                                 <button type="button" className="button">Booking</button>
