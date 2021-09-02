@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../navbar/navBar.css';
-import logo from '../../logo.svg';
 import SignUpModal from '../signup/signup';
 import LoginModal from '../login/login';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-
+import logotransport from '../../../app/public/images/logotransport.png';
 
 const Container = styled.div.attrs({
     className: 'container-fluid',
@@ -31,8 +30,8 @@ class NavBar extends Component {
                         {/* </div> */}
                     </div>
                     <div className="row">
-                        <div className="col-2 text-center">
-                            <img src={logo} alt="Logo" />
+                        <div className="col-2 text-left">
+                            <img src={logotransport} class="rounded float-left" alt="Logo" />
                         </div>
                         <div className="col-6 offset-4 text-center">
                             <Navbar expand="sm" style={{ justifyContent: 'flex-end' }}>

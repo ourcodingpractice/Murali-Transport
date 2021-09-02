@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../footer/footer.css'
+import logotransport from '../../../app/public/images/logotransport.png';
 
 class Footer extends Component {
     state = {}
@@ -12,6 +13,7 @@ class Footer extends Component {
                         <div className="content">
                             <p>Murali Transport, Dommeru.
                             </p>
+                            <img src={logotransport} class="rounded float-left" alt="murali"/>
                         </div>
                     </div>
                     <div className="col-3 offset-1">
