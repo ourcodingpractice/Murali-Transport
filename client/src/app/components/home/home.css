@@ -28,6 +28,27 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+/*
+ * Rounded Corners
+ */
+ .ghost-button-rounded-corners {
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    
+  }
+  .ghost-button-rounded-corners:hover,
+  .ghost-button-rounded-corners:active {
+    background-color: #fff;
+    color: #000;
+  }
+  
 
 h1,
 span {
