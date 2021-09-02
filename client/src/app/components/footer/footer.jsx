@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../footer/footer.css'
 import logotransport from '../../../app/public/images/logotransport.png';
+import logo4 from '../../../app/public/images/logo4.png';
 
 class Footer extends Component {
     state = {}
@@ -13,7 +14,7 @@ class Footer extends Component {
                         <div className="content">
                             <p>Murali Transport, Dommeru.
                             </p>
-                            <img src={logotransport} className="rounded float-left" alt="murali" />
+                            <img src={logo4} className="rounded float-left" alt="murali" />
                         </div>
                     </div>
                     <div className="col-xs-3">
