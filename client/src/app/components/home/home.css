@@ -8,10 +8,12 @@
 }
 
 .video-overlay {
-    height: 120vh;
     background-image: url("../../public/images/truck2.jpg");
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-attachment: fixed;
     background-size: cover;
+    background-color: #8f1e1e;
 }
 
 .button {
