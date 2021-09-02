@@ -39,10 +39,10 @@ span {
 }
 
 .line-div {
-    border: solid #2f2121 1px;
+    border: solid #f9fafb 1px;
     padding: 2px;
     margin-right: 10px;
-    background-color: #2f2121;
+    background-color: #e88621;
 }
 
 @media screen and (max-width: 768px) {

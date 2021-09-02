@@ -12,3 +12,13 @@
 form {
     margin-top: 1em !important;
 }
+
+.register-btn {
+    background-color: #ec5e1b !important;
+    border-color: #e65a17 !important;
+    color: white !important;
+}
+
+h2 {
+    color: white !important;
+}

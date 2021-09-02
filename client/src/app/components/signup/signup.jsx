@@ -107,7 +107,7 @@ export default function FormDialog() {
     };
     const handleShow = () => setShow(true);
 
-    const handlePhoneNumberChange = (e: any) => {
+    const handlePhoneNumberChange = (e) => {
         let regex;
         e.type === 'change' ? regex = /^[0-9]{1,10}$/ : regex = /^[0-9]{10}$/;
         if (regex.test(Number(e.target.value))) {
