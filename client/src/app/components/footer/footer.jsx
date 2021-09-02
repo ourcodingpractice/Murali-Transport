@@ -13,7 +13,7 @@ class Footer extends Component {
                         <div className="content">
                             <p>Murali Transport, Dommeru.
                             </p>
-                            <img src={logotransport} class="rounded float-left" alt="murali"/>
+                            <img src={logotransport} className="rounded float-left" alt="murali" />
                         </div>
                     </div>
                     <div className="col-xs-3">
