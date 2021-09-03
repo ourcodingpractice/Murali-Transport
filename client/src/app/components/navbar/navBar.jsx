@@ -23,7 +23,7 @@ class NavBar extends Component {
                     <div className="row contact-info">
                         {/* <div className="contact-info"> */}
                         <div className="col-md-6">
-                            <i className="fa fa-phone fa-lg"></i> <span>+91 9032245617</span>
+                            <i className="fa fa-phone fa-lg"></i> <span>+91 9949705008</span>
                         </div>
                         <div className="col-md-6">
                             <label>Email : </label><span> anu@yopmail.com</span>
