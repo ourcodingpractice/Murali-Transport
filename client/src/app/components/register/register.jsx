@@ -26,37 +26,37 @@ class VehicleRegister extends Component {
                 <form>
                     <div className="form-group row justify-content-sm-center">
 
-                        <div className="col-sm-6 mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5 mt-3">
                             <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Owner name"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
-                        <div className="col-sm-6  mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
                             <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Owner Phone number"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
-                        <div className="col-sm-6  mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
                             <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Vehicle Number"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
-                        <div className="col-sm-6  mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
                             <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Vehicle Model"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
-                        <div className="col-sm-6  mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
                             <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Driver Name"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
-                        <div className="col-sm-6  mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
                             <input type="text" className="form-control" id="exampleInputPassword1" placeholder=" Driver Phone Number"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
-                        <div className="col-sm-6  mt-2">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
                             <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Vehicle Location"></input>
                         </div>
                     </div>
