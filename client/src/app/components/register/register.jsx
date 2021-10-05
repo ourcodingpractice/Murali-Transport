@@ -1,21 +1,35 @@
-import { React, Component, useState } from 'react';
+import { React, Component } from 'react';
 import '../register/register.css';
 import { postVehicle } from '../../api/vehicles-api';
-import axios from 'axios';
 
 class VehicleRegister extends Component {
-    state = {}
-    registerVehicle(e) {
+    state = {
+        owner_name: ``,
+        owner_ph: '',
+        vehicle_type: '',
+        vehicle_number: '',
+        driver_name: '',
+        driver_ph: '',
+        load_max_capacity: '',
+        vehicle_location: '',
+        customer_id: null
+    }
+    isRegistered = false;
+
+
+    registerVehicle = (e) => {
         e.preventDefault();
-        postVehicle({}).then(res => {
-            console.log(res);
-            this.setState({});
+        postVehicle(this.state).then(res => {
+            // this.props.history.push('/home');
+            this.isRegistered = true;
         }).catch(err => {
             console.log(err);
         });
-        // const article = { title: 'React Hooks POST Request Example' };
-        // axios.post('https://reqres.in/api/articles', article)
-        //     .then(response => console.log(response));
+    }
+
+    handleChange = (e) => {
+        this.state[e.target.name] = e.target.value;
+        this.setState(this.state);
     }
     render() {
         return (
@@ -27,37 +41,42 @@ class VehicleRegister extends Component {
                     <div className="form-group row justify-content-sm-center">
 
                         <div className="col-xs-5 col-md-6 col-lg-5 mt-3">
-                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Owner name"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="owner_name" value={this.state.owner_name} placeholder="Owner name"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
                         <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Owner Phone number"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="owner_ph" value={this.state.owner_ph} placeholder="Owner Phone number"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
                         <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Vehicle Number"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="vehicle_number" value={this.state.vehicle_number} placeholder="Vehicle Number"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
                         <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Vehicle Model"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="vehicle_type" value={this.state.vehicle_type} placeholder="Vehicle Model"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
                         <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Driver Name"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="driver_name" value={this.state.driver_name} placeholder="Driver Name"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
                         <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder=" Driver Phone Number"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="driver_ph" value={this.state.driver_ph} placeholder=" Driver Phone Number"></input>
                         </div>
                     </div>
                     <div className="form-group row justify-content-sm-center">
                         <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
-                            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Vehicle Location"></input>
+                            <input type="text" className="form-control" onChange={this.handleChange} name="vehicle_location" value={this.state.vehicle_location} placeholder="Vehicle Location"></input>
+                        </div>
+                    </div>
+                    <div className="form-group row justify-content-sm-center">
+                        <div className="col-xs-5 col-md-6 col-lg-5  mt-3">
+                            <input type="text" className="form-control" onChange={this.handleChange} name="load_max_capacity" value={this.state.load_max_capacity} placeholder="Load Capacity (in Tons)"></input>
                         </div>
                     </div>
                     <div className="d-flex  m-2 p-1 justify-content-center">
@@ -65,8 +84,7 @@ class VehicleRegister extends Component {
                     </div>
 
                 </form>
-            </div>
-        )
+            </div>)
     }
 }
 

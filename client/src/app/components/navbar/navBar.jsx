@@ -32,7 +32,7 @@ class NavBar extends Component {
                     </div>
                     <div className="row">
                         <div className="col-2 text-left">
-                            <img src={logo4} class="rounded float-left" alt="Logo" />
+                            <img src={logo4} className="rounded float-left" alt="Logo" />
                         </div>
                         <div className="col-6 offset-4 text-center">
                             <Navbar expand="sm" style={{ justifyContent: 'flex-end' }}>

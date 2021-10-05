@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://reqres.in/api/articles';
+const url = 'http://localhost:8080/vehicles/post';
 const postVehicle = (data) => {
     return axios.post(url, data);
 }
